@@ -249,6 +249,7 @@ public class PlayerMotion : MonoBehaviour
         m_rigidbody.velocity = _velocity;
     }
 
+    // Public Method
     #region Public Method
 
     public bool OnGround { get => m_onGround; }
@@ -273,6 +274,11 @@ public class PlayerMotion : MonoBehaviour
         m_isJumping = true;
 
         m_desiredVelocity.y = _jumpForce;
+    }
+
+    public void AddForce(Vector2 _force)
+    {
+        m_desiredVelocity += _force;
     }
 
     #endregion
